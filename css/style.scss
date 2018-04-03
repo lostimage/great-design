@@ -1,0 +1,308 @@
+@import "_normalize.scss";
+@import "_layout.scss";
+@import url('https://fonts.googleapis.com/css?family=Nunito|Nunito+Sans:300,400,600,700,900|Playfair+Display');
+$title-color:#333;
+$ref-color:#d22425;
+$primary-color:#8990a0;
+$placeholder-color:#898f9f;
+
+$base-font:'Nunito Sans', sans-serif;
+$opacity-font:'Playfair Display', serif;
+h1,h2,h3,h4,h5,h6 {
+
+	margin: 0;
+	line-height: 1;
+}
+p{
+	margin: 0;
+}
+p+p {
+	margin-top: 40px;
+}
+body{
+	font:400 17px/1.65 $base-font;
+	color:$primary-color;
+}
+
+/* Layout */
+.ba-container{
+	padding-left: 20px;
+	padding-right: 20px;
+	max-width: 1210px;
+}
+
+/* Typography */
+a,
+input[type="submit"],
+input[type="button"],
+button{
+	transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+}
+input[type="submit"],
+input[type="button"],
+button,
+.ba-button{
+	display: inline-block;
+	font:700 17px/50px $base-font;
+	color:$ref-color;
+	text-decoration:none;
+	padding:0 31px;
+	border:1px solid #e4e4e4;
+	margin-left: 50px;
+	&:hover{
+		color:#e4e4e4;
+		background:$ref-color;
+	}
+}
+.ba-button--submit {
+	float:right;
+	background-color:#D11F20;
+	color:#fff;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+select,
+textarea {
+	transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+	font:400 15.97px/55px 'Nunito' , sans-serif;
+	color:  #898f9f;
+	width:100%;
+	border:0;
+	border-bottom: 1px solid #4c4c4c;
+
+	&:focus{
+		outline:0;
+	}
+	&+input {
+		margin-top: 35px;
+	}
+}
+textarea {
+	height: 244px;
+	&:placeholder{
+		color:red;
+	}
+
+}
+.ba-header {
+	background:#fff url("../img/bgintro.jpg") no-repeat ;
+}
+.ba-header-bar {
+	display: flex;
+	align-items: flex-end;
+	height:100px;
+	position:relative;
+}
+.ba-nav-image{
+	position:absolute;
+	bottom: -5px;
+	right: -210px;
+}
+.ba-intro {
+	padding:250px 0 100px 208px ;
+	min-height:100vh;
+	color:#dbdbdb;
+	position: relative;
+	&__suptitle{
+		font-size: 40px;
+		color:  #dbdbdb;
+	}
+	&__title {
+		font:900 99.96px/1 $base-font;
+		color:$ref-color;
+		text-transform: uppercase;
+	}
+	&__subtitle{
+		font-size: 70px;
+		font-weight: 300;
+		& span {
+			color: $title-color;
+		}
+	}
+}
+.ba-scroll {
+	position: absolute;
+	left: 50%;
+	bottom: 150px;
+	transform:translateX(-25px);
+}
+.ba-create {
+	padding:80px 0 165px;
+	&__title{
+		font-size: 60.06px;
+		color:$title-color;
+		position: relative;
+		font-family: $opacity-font;
+		&:after{
+			content: "What We Do?";
+			position:absolute;
+			font:400 110.89px/1 $opacity-font;
+			font-family: PlayfairDisplay;
+			color:  rgba(90, 90, 90, 0.0313725);
+			left: -100px;
+			top: 20px;
+		}
+	}
+	&__article{
+		padding:50px 70px 0 20px;
+	}
+	&__subtitle {
+		font-size: 16px;
+		font-weight: 700;
+	 color:  #393939;
+	 text-transform:uppercase;
+	 margin-bottom:45px;
+	}
+}
+.ba-image-box {
+	padding:0 60px 0 100px;
+	& img {
+		width:100%;
+		display:block;
+	box-shadow: 60px 60px 0   $title-color;
+	}
+}
+.ba-ideas{
+	padding:165px 0 ;
+	background:#fff url(../img/great1.jpg) no-repeat 100%;
+	&__title{
+		font-size: 60.06px;
+		color:$title-color;
+		position: relative;
+		margin-bottom: 30px;
+		font-family: $opacity-font;
+		&:after{
+			content: "Innovative Thinking";
+			position:absolute;
+			font:400 110.89px/1 $opacity-font;
+			font-family: PlayfairDisplay;
+			color:  rgba(90, 90, 90, 0.0313725);
+			left: -100px;
+			top: 20px;
+		}
+	}
+	&__subtitle{
+		margin-left: 208px;
+		color:  #717171;
+		font-size: 14px;
+		line-height: 20px;
+		max-width: 438px;
+	}
+	&__description {
+		display:flex;
+	}
+}
+.ba-column {
+	padding:100px 0 59px 50px;
+	max-width:419px;
+	text-align: justify;
+	&--first p:first-of-type:first-letter {
+	font:700 99.97px/28px $base-font;
+	color:$title-color;
+	}
+	&--first {
+		padding-top:71.97px;
+	}
+}
+.ba-portfolio {
+	padding:150px 0 ;
+	position:relative;
+	&__title{
+		font-size: 60.06px;
+		color:$title-color;
+		position: relative;
+		font-family: $opacity-font;
+		&:after{
+			content: "Some Designs";
+			position:absolute;
+			font:400 110.89px/1 $opacity-font;
+			font-family: PlayfairDisplay;
+			color:  rgba(90, 90, 90, 0.0313725);
+			left: -100px;
+			top: 20px;
+		}
+	}
+	&__visit{
+		font:700 17px/50px $base-font;
+		color:$ref-color;
+		text-decoration:none;
+		&:hover {
+			color:$title-color;
+		}
+	}
+}
+.ba-description {
+	max-width: 305px;
+	padding:120px 0 87px 50px;
+	&__title {
+	font:400 36.03px/1 $opacity-font;
+	margin-bottom: 30px;
+	}
+}
+.ba-works {
+	display:flex;
+	position:absolute;
+	right: 0;
+	bottom: 50%;
+	transform:translateY(130px);
+}
+.ba-recent-work {
+	padding-left:20px;
+	flex-shrink: 0;
+	& img {
+		display:block;
+		width:100%;
+		&:hover{
+			opacity:0.8;
+		}
+	}
+}
+.ba-footer {
+	background:#fff url(../img/wave.jpg) no-repeat 0 100%;
+}
+.ba-contact-us{
+	padding:165px 0 ;
+	&__bg{
+		background:#fff url(../img/Contact.png) no-repeat 0 0 ;
+		& p{
+			max-width: 300px;
+			color:  #8990a0;
+			font-size: 14px;
+			text-align: justify;
+		}
+	}
+	&__title{
+		font-size: 60px;
+		color:$title-color;
+		position: relative;
+		margin-bottom: 30px;
+		font-family: $opacity-font;
+		}
+}
+.ba-contact-form {
+	padding:60px 0 50px 138px;
+}
+.ba-copyright {
+	padding:165px 0 60px;
+	text-align: center;
+	&__designer {
+		position:relative;
+		& span+ span{
+			padding-left: 25px;
+		}
+	}
+
+}
+.ba-heart {
+	position:absolute;
+	left: 50%;
+	bottom: 5px;
+	transform:translateX(-25px);
+	& img {
+		display:block;
+		width: 100%;
+	}
+}
