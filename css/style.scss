@@ -17,11 +17,12 @@ p{
 	margin: 0;
 }
 p+p {
-	margin-top: 40px;
+	margin-top: 30px;
 }
 body{
 	font:400 17px/1.65 $base-font;
 	color:$primary-color;
+
 }
 
 /* Layout */
@@ -81,56 +82,77 @@ textarea {
 	}
 }
 textarea {
-	height: 244px;
-	&:placeholder{
-		color:red;
-	}
-
+	height: 100%;
 }
 .ba-header {
-	background:#fff url("../img/bgintro.jpg") no-repeat ;
+
 }
 .ba-header-bar {
 	display: flex;
 	align-items: flex-end;
 	height:100px;
 	position:relative;
+	z-index:1;
 }
 .ba-nav-image{
 	position:absolute;
 	bottom: -5px;
-	right: -210px;
+	right: -205px;
+}
+.ba-logo {
+	z-index:1;
+	&:before{
+		position: absolute;
+		top: 0;
+		left: -305px;
+		content:'';
+		background:#fff url("../img/bgintro.jpg") no-repeat ;
+		width: 564px;
+		height: 806px;
+		z-index: -1;
+	}
 }
 .ba-intro {
-	padding:250px 0 100px 208px ;
-	min-height:100vh;
+	padding:218px 0 525px 208px ;
 	color:#dbdbdb;
 	position: relative;
+	z-index:1;
 	&__suptitle{
 		font-size: 40px;
 		color:  #dbdbdb;
+
 	}
 	&__title {
 		font:900 99.96px/1 $base-font;
 		color:$ref-color;
 		text-transform: uppercase;
+		letter-spacing: -0.02em;
+		display: inline-block;
+		padding-right: 20px;
+		border-right:10px solid #333 ;
+
 	}
 	&__subtitle{
 		font-size: 70px;
 		font-weight: 300;
+
+		letter-spacing: -0.02em;
 		& span {
 			color: $title-color;
+			letter-spacing: -0.02em;
+
 		}
 	}
+
 }
 .ba-scroll {
 	position: absolute;
 	left: 50%;
 	bottom: 150px;
-	transform:translateX(-25px);
+	transform:translateX(-39%);
 }
 .ba-create {
-	padding:80px 0 165px;
+	padding:21px 0 165px;
 	&__title{
 		font-size: 60.06px;
 		color:$title-color;
@@ -146,18 +168,23 @@ textarea {
 		}
 	}
 	&__article{
-		padding:50px 70px 0 20px;
+		padding:19px 70px 0 50px;
 	}
 	&__subtitle {
 		font-size: 16px;
 		font-weight: 700;
 	 color:  #393939;
 	 text-transform:uppercase;
-	 margin-bottom:45px;
+	 margin-bottom:47px;
+	 letter-spacing: 0.12em;
 	}
 }
+.ba-col-6__container {
+	padding-top: 50px;
+	padding-left: 8px;
+}
 .ba-image-box {
-	padding:0 60px 0 100px;
+	padding:0 53px 0 90px;
 	& img {
 		width:100%;
 		display:block;
@@ -165,8 +192,8 @@ textarea {
 	}
 }
 .ba-ideas{
-	padding:165px 0 ;
-	background:#fff url(../img/great1.jpg) no-repeat 100%;
+	padding:178px 0 ;
+	background:#fff url(../img/great1.jpg) no-repeat 82% 74%;
 	&__title{
 		font-size: 60.06px;
 		color:$title-color;
@@ -206,13 +233,16 @@ textarea {
 	}
 }
 .ba-portfolio {
-	padding:150px 0 ;
-	position:relative;
+	padding:207px 0 ;
+	overflow: hidden;
+
 	&__title{
 		font-size: 60.06px;
 		color:$title-color;
 		position: relative;
 		font-family: $opacity-font;
+		margin-bottom: 130px;
+
 		&:after{
 			content: "Some Designs";
 			position:absolute;
@@ -231,20 +261,29 @@ textarea {
 		}
 	}
 }
+.ba-container--relative {
+	position: relative;
+}
 .ba-description {
-	max-width: 305px;
-	padding:120px 0 87px 50px;
+	max-width: 375px;
+	padding: 48px 44px 37px 50px;
+	border: 1px solid rgba(219, 219, 219, 0.8);
+	margin-bottom: 50px;
 	&__title {
 	font:400 36.03px/1 $opacity-font;
-	margin-bottom: 30px;
+	margin-bottom: 29px;
+	color: #333;
+	}
+	& p{
+		line-height: 24px;
 	}
 }
 .ba-works {
 	display:flex;
 	position:absolute;
-	right: 0;
-	bottom: 50%;
-	transform:translateY(130px);
+	left: 395px;
+	bottom: 18%;
+
 }
 .ba-recent-work {
 	padding-left:20px;
@@ -261,7 +300,7 @@ textarea {
 	background:#fff url(../img/wave.jpg) no-repeat 0 100%;
 }
 .ba-contact-us{
-	padding:165px 0 ;
+	padding:66px 0 0;
 	&__bg{
 		background:#fff url(../img/Contact.png) no-repeat 0 0 ;
 		& p{
@@ -280,26 +319,18 @@ textarea {
 		}
 }
 .ba-contact-form {
-	padding:60px 0 50px 138px;
+	padding:10px 0 50px 138px;
 }
 .ba-copyright {
-	padding:165px 0 60px;
+	padding:200px 0 60px;
 	text-align: center;
 	&__designer {
-		position:relative;
-		& span+ span{
-			padding-left: 25px;
-		}
+
+
 	}
 
 }
-.ba-heart {
-	position:absolute;
-	left: 50%;
-	bottom: 5px;
-	transform:translateX(-25px);
-	& img {
-		display:block;
-		width: 100%;
-	}
+.ba-row--flex {
+	display: flex;
+	margin-bottom: 60px;
 }
